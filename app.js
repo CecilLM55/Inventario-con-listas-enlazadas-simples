@@ -39,3 +39,14 @@ listarInv.addEventListener('click', () => {
    document.getElementById('divDetalles').innerHTML += miInv.listadoInverso();
 });
 
+const insertar = document.getElementById('btnInsertar');
+insertar.addEventListener('click', () => {
+   let codigo = document.getElementById('txtCodigo').value;
+   let nombre = document.getElementById('txtNombre').value;
+   let cantidad = document.getElementById('txtCantidad').value;
+   let costo = document.getElementById('txtCosto').value;
+   let posicion = document.getElementById('txtInsertar').value;
+   let producto = new Producto(codigo, nombre, cantidad, costo);
+   miInv.insertar(posicion, producto);
+   document.getElementById('divDetalles').innerHTML += '<p> Se ha insertado el producto </p>';
+});
